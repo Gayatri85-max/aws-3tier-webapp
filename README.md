@@ -1,22 +1,22 @@
 # aws-3tier-webapp
 Secure and Highly Available 3-tier Web Application Architecture on AWS
+
+
 # Secure & Highly Available 3-Tier Web Application on AWS
 
 ## Project Overview
-This project demonstrates how to design and deploy a secure, highly available, and scalable 3-tier web application architecture using AWS services.
+This project demonstrates the design and deployment of a secure, highly available, and scalable 3-tier web application architecture using AWS services.
 
-The architecture follows AWS best practices by isolating resources into public and private subnets and using managed services for scalability and monitoring.
+The architecture follows AWS best practices by isolating resources into public and private subnets and using managed services for scalability, security, and monitoring.
 
-## Architecture and Implementation Overview
-Designed and deployed a secure 3-tier web application architecture on AWS using VPC, EC2, Auto Scaling, Application Load Balancer, and RDS.
-The application is highly available, scalable, and follows AWS security best practices using private subnets, IAM roles, and security groups.
-CloudWatch is used for monitoring and Auto Scaling ensures availability during traffic spikes
 ---
 
-## Architecture Overview
-User traffic is routed through an Application Load Balancer placed in public subnets.  
-The load balancer forwards requests to EC2 instances running in private subnets managed by an Auto Scaling Group.  
-The application connects securely to an RDS MySQL database hosted in private subnets.
+## Architecture and Implementation
+
+### Architecture Overview
+User traffic is routed through an Application Load Balancer (ALB) placed in public subnets.  
+The ALB forwards incoming requests to EC2 instances running in private subnets, which are managed by an Auto Scaling Group to ensure high availability and scalability.  
+The application layer securely connects to an Amazon RDS MySQL database deployed in private subnets, ensuring that the database is not exposed to the public internet.
 
 ---
 
@@ -30,18 +30,18 @@ The application connects securely to an RDS MySQL database hosted in private sub
 | Application Load Balancer | Traffic distribution |
 | RDS (MySQL) | Database |
 | CloudWatch | Monitoring |
-| IAM | Secure access |
-| NAT Gateway | Private subnet internet access |
-| Security Groups | Traffic control |
+| IAM | Secure access management |
+| NAT Gateway | Internet access for private subnets |
+| Security Groups | Traffic control and firewall rules |
 
 ---
 
 ## Security Implementation
 - EC2 instances are deployed in private subnets
-- ALB is placed in public subnets
-- Database is not publicly accessible
-- IAM roles used instead of access keys
-- Least privilege access followed
+- Application Load Balancer is placed in public subnets
+- RDS database is not publicly accessible
+- IAM roles are used instead of long-term access keys
+- Security groups enforce least-privilege access between tiers
 
 ---
 
@@ -54,11 +54,12 @@ The application connects securely to an RDS MySQL database hosted in private sub
 ---
 
 ## Monitoring & Alerts
-- CloudWatch monitors EC2 CPU usage
-- Alarms trigger scaling actions
-- System health is continuously monitored
+- Amazon CloudWatch monitors EC2 CPU utilization
+- CloudWatch alarms trigger Auto Scaling actions during traffic spikes
+- Application and system health are continuously monitored
 
 ---
 
 ## Outcome
-This project provides hands-on experience with real-world AWS infrastructure design, networking, security, and scalability.
+This project provides hands-on experience with real-world AWS infrastructure design, including networking, security, monitoring, and high availability.  
+It demonstrates the implementation of a production-style 3-tier architecture following AWS best practices.
