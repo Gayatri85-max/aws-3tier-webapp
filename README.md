@@ -7,6 +7,10 @@ This project demonstrates how to design and deploy a secure, highly available, a
 
 The architecture follows AWS best practices by isolating resources into public and private subnets and using managed services for scalability and monitoring.
 
+
+Designed and deployed a secure 3-tier web application architecture on AWS using VPC, EC2, Auto Scaling, Application Load Balancer, and RDS.
+The application is highly available, scalable, and follows AWS security best practices using private subnets, IAM roles, and security groups.
+CloudWatch is used for monitoring and Auto Scaling ensures availability during traffic spikes.”
 ---
 
 ## Architecture Overview
